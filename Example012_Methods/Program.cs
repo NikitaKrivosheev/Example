@@ -153,7 +153,25 @@ void SelectionSort(int[] array)
     }
 }
 
+void SelectionSort2(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[minPosition] < array[j]) minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+
 PrintArray(arr);
 
 SelectionSort(arr);
+PrintArray(arr);
+
+SelectionSort2(arr);
 PrintArray(arr);
